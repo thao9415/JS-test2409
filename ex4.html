@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1000" height="700" style="border: 1px solid #000000"></canvas>
+<script>
+    let Rectangle = function (x, y, width, height, color) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.color = color;
+        this.getX = function () {
+            return this.x;
+        };
+        this.getY = function () {
+            return this.y;
+        };
+        this.getHeight = function () {
+            return this.length;
+        };
+        this.getWidth = function () {
+            return this.width;
+        };
+        this.getColor = function () {
+            return this.color;
+        };
+        this.setX = function (x) {
+            this.x = x;
+
+        };
+        this.setY = function (y) {
+            this.y = y;
+
+        };
+        this.setWidth = function (width) {
+            this.weight = width;
+
+        };
+        this.setHeight = function (height) {
+            this.height = height;
+
+        };
+        this.setColor = function (color) {
+            this.color = color;
+
+        };
+        this.render = function () {
+            let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            ctx.strokeRect(this.x, this.y, this.width, this.height);
+            ctx.strokeStyle = this.color;
+        }
+    };
+
+    let rectangle = new Rectangle(10, 10, 200, 100, "#000000");
+    rectangle.render();
+
+
+</script>
+
+</body>
+</html>
